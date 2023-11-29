@@ -6,7 +6,7 @@ Open Xcode and select "Create a new Xcode project". Choose "App" as the project 
 
 **2. Import the Swift files**
 
-Drag and drop the `modified_SwiftUI.swift` and `rPPG.swift` files into the project navigator. Xcode will automatically add them to your project.
+Drag and drop the `rppg_SwiftUI.swift` and `rPPG.swift` files into the project navigator. Xcode will automatically add them to your project.
 
 **3. Create the Main View**
 
