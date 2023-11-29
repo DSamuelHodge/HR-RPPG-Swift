@@ -1,4 +1,4 @@
-Sure, I can help you create a runnable prototype from your two Swift files. Here's a step-by-step guide:
+Here's a step-by-step guide:
 
 **1. Create a new Xcode project**
 
@@ -34,7 +34,7 @@ Connect your iPhone or iPad to your Mac and click the "Run" button in Xcode. The
 
 You can now add additional features to your app, such as saving the results to a file or displaying a graph of the heart rate over time.
 
-Here's an example of how to save the results to a file:
+Save the results to a file:
 
 ```swift
 func saveResults(results: RppgResults) {
@@ -65,5 +65,3 @@ func didDetect(faces: [VNFaceObservation]) {
 ```
 
 This will save the results of each face detection to a file called `results.json` in the Documents directory.
-
-I hope this helps!
