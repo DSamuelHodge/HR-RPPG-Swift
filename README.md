@@ -27,7 +27,6 @@ The repository welcomes contributions from developers interested in enhancing th
 **Advanced machine learning models**: Develop and incorporate more sophisticated machine learning models for improved heart rate estimation.
 **Integration with existing frameworks**: Integrate the code with popular iOS frameworks for seamless integration into existing applications.
 
-Sure, here is the documentation for the provided code:
 
 ## RPPG
 
