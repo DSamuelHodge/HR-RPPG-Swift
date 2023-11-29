@@ -1,8 +1,6 @@
 The steps for Single-lead ECG synthesis from video-PPG provided by the authors are as follows:
 https://www.nature.com/articles/s41598-023-45933-3#Sec34
 
-Sure, here is a summary of the section "Single-lead ECG synthesis from video-PPG" from the article "Your smartphone could act as a pulse-oximeter and as a single-lead ECG":
-
 The section describes a novel method for synthesizing a single-lead electrocardiogram (ECG) from video-photoplethysmography (vPPG) signals obtained using a smartphone camera. The method utilizes a deep learning approach based on a discrete cosine transform (DCT) and a feedforward neural network (FNN).
 
 The DCT-FNN method first extracts pulse rate (PR) and pulse volume (PV) information from the vPPG signal. The PV information is then transformed into the frequency domain using the DCT. The DCT coefficients are then fed into the FNN, which learns to map the DCT coefficients to the corresponding ECG signal.
@@ -69,10 +67,10 @@ Several parts of the single-lead ECG synthesis from video-PPG method can be impl
 
 - Standard metrics for evaluating the accuracy of the synthesized ECG signals can be calculated using libraries like SciPy or NumPy. These libraries can be integrated into the iOS app using Swift or Objective-C.
 
-In summary, the iOS SDK and CoreML can be effectively utilized for various stages of the single-lead ECG synthesis from video-PPG pipeline, including data acquisition, preprocessing, PR and PV extraction, and ECG synthesis. These tools provide a powerful combination for developing mobile applications that can monitor cardiovascular health in a non-invasive and continuous manner.
+The iOS SDK and CoreML can be effectively utilized for various stages of the single-lead ECG synthesis from video-PPG pipeline, including data acquisition, preprocessing, PR and PV extraction, and ECG synthesis. These tools provide a powerful combination for developing mobile applications that can monitor cardiovascular health in a non-invasive and continuous manner.
 
 **P2E-Net**
-Listed steps to training the P2E-Net using CoreML, based on the instructions from the Single-lead ECG synthesis from video-PPG:
+Listed are steps to training the P2E-Net using CoreML, based on the instructions from the Single-lead ECG synthesis from video-PPG:
 
 **Data Preparation**:
 
