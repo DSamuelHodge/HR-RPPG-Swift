@@ -20,7 +20,9 @@ This repository provides a comprehensive implementation for extracting heart rat
 **Swift code**: Implement the entire pipeline in Swift, a powerful and versatile programming language for iOS development.
 
 ### Contribution Guidelines:
-The repository welcomes contributions from developers interested in enhancing the heart rate extraction algorithm and expanding its applications. Contributions may include:
+The repository welcomes contributions from developers interested in enhancing the heart rate extraction algorithm and expanding its applications. 
+
+#### Contributions may include:
 **Improved signal processing techniques**: Enhance the accuracy and robustness of pulse rate and pulse volume extraction.
 **Advanced machine learning models**: Develop and incorporate more sophisticated machine learning models for improved heart rate estimation.
 **Integration with existing frameworks**: Integrate the code with popular iOS frameworks for seamless integration into existing applications.
