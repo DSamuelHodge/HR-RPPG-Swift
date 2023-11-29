@@ -86,3 +86,74 @@ The `RppgResults` struct encapsulates the results of the rPPG processing:
 - `signal`: An array of floats representing the filtered rPPG signal.
 
 - `heartRate`: The estimated heart rate based on the filtered rPPG signal.
+
+
+## RppgView
+
+The `RppgView` struct is the main view of the Rppg app. It displays the video preview, ROI mask overlay, facial landmarks, waveform plot, heart rate, frequency spectrum, and UI controls.
+
+### Properties
+
+- `rppgModel`: An `RPPGModel` object that stores the rPPG data.
+- `videoCapture`: A `CaptureSession` object that manages the capture of video frames.
+
+### Body
+
+The body of the `RppgView` struct is a `ZStack` that contains the following elements:
+
+- `AVFoundationView`: Displays the video preview from the front-facing camera.
+- `Image`: Displays the ROI mask overlay, which is a mask highlighting the region of interest (ROI) around the detected face.
+- `ForEach`: Displays the facial landmarks, which are points representing the location of key facial features.
+- `WaveformView`: Displays the waveform plot, which is a graph of the PPG signal over time.
+- `Text`: Displays the heart rate, which is calculated from the PPG signal.
+- `FrequencySpectrumView`: Displays the frequency spectrum, which is a visualization of the frequency components of the PPG signal.
+- `HStack`: Contains the "Start" and "Stop" buttons to control the video capture.
+
+### Methods
+
+- `onAppear()`: Starts the video capture when the view appears.
+- `onDisappear()`: Stops the video capture when the view disappears.
+
+## WaveformView
+
+The `WaveformView` struct displays the waveform plot of the PPG signal.
+
+### Properties
+
+- `signal`: An array of doubles representing the PPG signal.
+
+### Body
+
+The body of the `WaveformView` struct is a `ZStack` that contains a `Path` object that draws the line graph of the PPG signal.
+
+## FrequencySpectrumView
+
+The `FrequencySpectrumView` struct is a placeholder for the future implementation of the frequency spectrum visualization.
+
+### Body
+
+The body of the `FrequencySpectrumView` struct displays a placeholder text "Frequency Spectrum".
+
+## CaptureSession
+
+The `CaptureSession` class manages the capture of video frames from the front-facing camera and extracts the rPPG data from the captured frames.
+
+### Properties
+
+- `delegate`: An `RppgView` object that receives updates about the extracted rPPG data.
+- `captureSession`: An `AVCaptureSession` object that manages the video capture pipeline.
+- `videoOutput`: An `AVCaptureVideoDataOutput` object that receives video frames from the capture session.
+- `isRunning`: A boolean property indicating whether the capture session is running.
+
+### Methods
+
+- `startRunning()`: Starts the video capture.
+- `stopRunning()`: Stops the video capture.
+
+### init()
+
+The initializer of the `CaptureSession` class configures the capture session.
+
+### captureOutput(_:didOutput:from:)
+
+The `captureOutput()` method is called when a new video frame is captured. It extracts the image buffer from the sample buffer, converts it to a `UIImage`, and then extracts the face and ROI mask from the image. It then updates the `rPPGModel` with the extracted data, calculates the heart rate from the PPG signal, and updates the UI on the main thread.
