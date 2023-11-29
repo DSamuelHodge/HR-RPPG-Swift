@@ -26,3 +26,63 @@ The repository welcomes contributions from developers interested in enhancing th
 **Improved signal processing techniques**: Enhance the accuracy and robustness of pulse rate and pulse volume extraction.
 **Advanced machine learning models**: Develop and incorporate more sophisticated machine learning models for improved heart rate estimation.
 **Integration with existing frameworks**: Integrate the code with popular iOS frameworks for seamless integration into existing applications.
+
+Sure, here is the documentation for the provided code:
+
+## RPPG
+
+The RPPG class is a lightweight framework for remote photoplethysmography (rPPG) using the front-facing camera. It provides a simple interface for capturing video frames, detecting faces, and extracting heart rate information from the facial region.
+
+### Overview
+
+The RPPG class encapsulates the necessary components for rPPG-based heart rate monitoring:
+
+- **AVCaptureSession:** Manages the capture of video frames from the front-facing camera.
+
+- **FaceDetector:** Detects faces in the captured video frames and provides information about their location and features.
+
+- **rPPG Pipeline:** Extracts rPPG signals from the detected facial region and estimates heart rate based on the extracted signals.
+
+### Usage
+
+To use the RPPG class, follow these steps:
+
+1. Create an instance of the RPPG class.
+
+2. Set the `delegate` property to an object that conforms to the RPPGDelegate protocol.
+
+3. Call the `startCapturing()` method to start capturing video frames.
+
+4. The `delegate` object will receive updates about the detected face and the estimated heart rate through the `rppgDidUpdate(_:)` method.
+
+### Properties
+
+- `signal`: An array of floats representing the raw rPPG signal.
+
+- `delegate`: An optional RPPGDelegate object that receives updates about the detected face and the estimated heart rate.
+
+### Methods
+
+- `startCapturing()`: Starts capturing video frames and processing them for rPPG.
+
+- `stopCapturing()`: Stops capturing video frames.
+
+### Delegate Protocol
+
+The `RPPGDelegate` protocol defines a method that is called when the RPPG class has new results to report:
+
+- `rppgDidUpdate(_:)`: Receives an RppgResults object containing the raw image, ROI mask, detected face, filtered signal, and estimated heart rate.
+
+### RppgResults
+
+The `RppgResults` struct encapsulates the results of the rPPG processing:
+
+- `rawImage`: The raw RGB image captured from the front-facing camera.
+
+- `roiMask`: A mask representing the region of interest (ROI) around the detected face.
+
+- `face`: The detected face observation, providing information about its location and features.
+
+- `signal`: An array of floats representing the filtered rPPG signal.
+
+- `heartRate`: The estimated heart rate based on the filtered rPPG signal.
